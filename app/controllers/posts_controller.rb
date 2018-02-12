@@ -66,7 +66,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:post_id])
     @attachment_id = params[:attachment_id].map(&:to_i)
     respond_to do |format|
-      if @post.images.purge
+      if @post.images.purge(@attachment_id)
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
         format.json { render :show, status: :ok, location: @post }
       else

@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This test shows the changes made to `many.rb`.
 
-Things you may want to cover:
+To test, bundle install, start development server and open a browser to: http://localhost:3000/posts/
 
-* Ruby version
+Create a test post and attach several files. You can then edit the post and delete only the files that you want to.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+You can also test the purge all behavior by removing the argument from `if @post.images.purge(@attachment_id)` in the posts controller and it will delete all attachments.
