@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</p>
+
+<!-- List attached images if any -->
+<ul>
+  <% if @post.images.any? %>
+    <% @post.images.each do |image| %>
+      
+      <li>
+        <%= link_to image.blob.filename, url_for(image), id: image.attachments.ids %>
+      </li>
+    <% end %>
+  <% else %>
+    <li class="list-group-item">
+      Nothing here
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>
